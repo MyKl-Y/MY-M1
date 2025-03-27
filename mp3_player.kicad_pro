@@ -408,6 +408,18 @@
     [
       "2c361aad-9218-45b1-882d-1b23ed962d51",
       "Root"
+    ],
+    [
+      "cab4de65-88fb-46b0-a8b6-87d33da9c711",
+      "TP4056 LIPO Charger with Protection"
+    ],
+    [
+      "f7422593-c47c-4319-b1b8-47f066e4756c",
+      "MT360B Step Up Boost Converter"
+    ],
+    [
+      "6a3dd36d-1628-4d2a-96ea-5c10bc43baae",
+      "MicroSD Card Reader to SPI"
     ]
   ],
   "text_variables": {}
