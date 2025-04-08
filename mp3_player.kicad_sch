@@ -948,630 +948,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Display_Graphic:OLED-128O064D"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "DS"
-				(at -10.16 38.1 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "OLED-128O064D"
-				(at 12.7 38.1 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Display:OLED-128O064D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.vishay.com/docs/37902/oled128o064dbpp3n00000.pdf"
-				(at 0 20.32 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "OLED display 128x64"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "display oled"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "OLED?128O064D*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "OLED-128O064D_0_1"
-				(rectangle
-					(start -10.16 35.56)
-					(end 10.16 -35.56)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "OLED-128O064D_1_1"
-				(pin passive line
-					(at -12.7 33.02 0)
-					(length 2.54)
-					(name "C2N"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 30.48 0)
-					(length 2.54)
-					(name "C2P"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 27.94 0)
-					(length 2.54)
-					(name "C1P"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 25.4 0)
-					(length 2.54)
-					(name "C1N"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 20.32 0)
-					(length 2.54)
-					(name "BS0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 17.78 0)
-					(length 2.54)
-					(name "BS1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 15.24 0)
-					(length 2.54)
-					(name "BS2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 10.16 0)
-					(length 2.54)
-					(name "~{CS}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 7.62 0)
-					(length 2.54)
-					(name "~{RES}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 5.08 0)
-					(length 2.54)
-					(name "D/~{C}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 2.54 0)
-					(length 2.54)
-					(name "R/~{W}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 0 0)
-					(length 2.54)
-					(name "E/~{RD}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "17"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -5.08 0)
-					(length 2.54)
-					(name "D0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -7.62 0)
-					(length 2.54)
-					(name "D1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -10.16 0)
-					(length 2.54)
-					(name "D2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "20"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -12.7 0)
-					(length 2.54)
-					(name "D3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "21"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -15.24 0)
-					(length 2.54)
-					(name "D4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "22"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -17.78 0)
-					(length 2.54)
-					(name "D5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "23"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -20.32 0)
-					(length 2.54)
-					(name "D6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "24"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -22.86 0)
-					(length 2.54)
-					(name "D7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "25"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -27.94 0)
-					(length 2.54)
-					(name "IREF"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "26"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -30.48 0)
-					(length 2.54)
-					(name "VCOMH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "27"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 38.1 270)
-					(length 2.54)
-					(name "VBAT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -38.1 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -2.54 -38.1 90)
-					(length 2.54)
-					(hide yes)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "30"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 38.1 270)
-					(length 2.54)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -38.1 90)
-					(length 2.54)
-					(name "VSS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 2.54 38.1 270)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "28"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 2.54 -38.1 90)
-					(length 2.54)
-					(name "VLSS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "29"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 10.16 0 180)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "MCU_Module:Arduino_Nano_v2.x"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3154,160 +2530,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Display_Graphic:OLED-128O064D")
-		(at 247.65 119.38 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b492e79b-9645-424e-8044-0da259778d8e")
-		(property "Reference" "DS1"
-			(at 259.08 118.1099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "OLED-128O064D"
-			(at 259.08 120.6499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Display:OLED-128O064D"
-			(at 247.65 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/docs/37902/oled128o064dbpp3n00000.pdf"
-			(at 247.65 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "OLED display 128x64"
-			(at 247.65 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "30"
-			(uuid "994d5c91-ca30-4276-b129-05413dcb0cf9")
-		)
-		(pin "20"
-			(uuid "44b9e9f9-32c7-4f85-b6d8-34fdf135a372")
-		)
-		(pin "16"
-			(uuid "e522029e-5b38-47d4-8277-f2f858847342")
-		)
-		(pin "10"
-			(uuid "b4112b25-020e-4fcb-ada0-9ce205a27269")
-		)
-		(pin "11"
-			(uuid "dd74a7af-200d-467a-9c39-6a162251f7e9")
-		)
-		(pin "21"
-			(uuid "0720dc0e-4742-44d8-9ff9-11df1e68a979")
-		)
-		(pin "3"
-			(uuid "775d277b-59bd-4548-a1b6-3bf5dcd1d353")
-		)
-		(pin "17"
-			(uuid "e65016cc-adcb-4129-82f2-6611e6297ceb")
-		)
-		(pin "14"
-			(uuid "4e8154e1-b9ee-4e3a-be18-2b5cbab62cf5")
-		)
-		(pin "13"
-			(uuid "732ae514-e25b-444a-9ac2-26373424bd3e")
-		)
-		(pin "1"
-			(uuid "316c9a1b-22a2-4bfd-ae46-99ebfcc7a18a")
-		)
-		(pin "8"
-			(uuid "90726e77-b5c8-4cd5-af5e-e1d6f24972e3")
-		)
-		(pin "18"
-			(uuid "f3010422-3177-4cff-9443-49ebd54b0f89")
-		)
-		(pin "19"
-			(uuid "0d0b1fe0-e28e-4dd5-ae8c-e4d8a292adb2")
-		)
-		(pin "9"
-			(uuid "541b0a50-c294-47f2-acfd-3e00fe3e3527")
-		)
-		(pin "22"
-			(uuid "8da6b8f5-46dc-4400-a1a3-332971a4c0cf")
-		)
-		(pin "15"
-			(uuid "f4c19a11-0399-4a25-9695-b5f2023780ff")
-		)
-		(pin "5"
-			(uuid "51a8e549-2049-4ec2-ba25-676f0ce3c226")
-		)
-		(pin "4"
-			(uuid "09452ab7-4145-4377-9f5b-8d52d5cf4674")
-		)
-		(pin "2"
-			(uuid "801cfd6e-fae9-473a-9e7d-edae39c89ffe")
-		)
-		(pin "7"
-			(uuid "bf389c5f-3688-4823-8132-38e6ae470980")
-		)
-		(pin "12"
-			(uuid "c3d0c02c-7867-40a9-8430-3e703cfb4b33")
-		)
-		(pin "29"
-			(uuid "6018d302-28b5-4ad0-85eb-149b13957896")
-		)
-		(pin "28"
-			(uuid "b7411612-940a-4634-a811-43671a46a656")
-		)
-		(pin "23"
-			(uuid "a78ed805-f493-4bbc-a2e7-c833b1803033")
-		)
-		(pin "27"
-			(uuid "adc86622-4101-4ae7-9b9c-5f12a5976e70")
-		)
-		(pin "26"
-			(uuid "8fc123ea-0dae-44a2-a23d-9f14df28419c")
-		)
-		(pin "25"
-			(uuid "1584d115-7ff9-43c3-a9be-4f4275053859")
-		)
-		(pin "24"
-			(uuid "f37ea50c-894c-4b0d-863f-5a040dba851d")
-		)
-		(pin "6"
-			(uuid "41a03764-0856-4a17-b07a-b2080a2afb32")
-		)
-		(instances
-			(project ""
-				(path "/2c361aad-9218-45b1-882d-1b23ed962d51"
-					(reference "DS1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 22.86 147.32 0)
 		(unit 1)
@@ -3377,7 +2599,7 @@
 	)
 	(symbol
 		(lib_id "MCU_Module:Arduino_Nano_v2.x")
-		(at 95.25 154.94 0)
+		(at 80.01 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3386,7 +2608,7 @@
 		(fields_autoplaced yes)
 		(uuid "f59cb3d1-4ec6-407c-ba41-d4b73ef0957c")
 		(property "Reference" "A1"
-			(at 99.9841 180.34 0)
+			(at 84.7441 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3395,7 +2617,7 @@
 			)
 		)
 		(property "Value" "Arduino_Nano_v2.x"
-			(at 99.9841 182.88 0)
+			(at 84.7441 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3404,7 +2626,7 @@
 			)
 		)
 		(property "Footprint" "Module:Arduino_Nano"
-			(at 95.25 154.94 0)
+			(at 80.01 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3414,7 +2636,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.arduino.cc/en/uploads/Main/ArduinoNanoManual23.pdf"
-			(at 95.25 154.94 0)
+			(at 80.01 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3423,7 +2645,7 @@
 			)
 		)
 		(property "Description" "Arduino Nano v2.x"
-			(at 95.25 154.94 0)
+			(at 80.01 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3608,6 +2830,88 @@
 			(project "mp3_player"
 				(path "/2c361aad-9218-45b1-882d-1b23ed962d51"
 					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 64.77 44.45)
+		(size 36.83 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a70ee053-ac6e-4abe-89a3-3895acca0324")
+		(property "Sheetname" "SSD1306 128x32 OLED"
+			(at 64.77 43.7384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SSD1306_128x32_OLED.kicad_sch"
+			(at 64.77 59.0046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "GND" input
+			(at 64.77 57.15 180)
+			(uuid "4452add5-845f-4a20-b90e-cbfff89443dd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SCL" bidirectional
+			(at 64.77 49.53 180)
+			(uuid "640c4902-2e5a-4166-9e96-e0f30424fd59")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDA" bidirectional
+			(at 64.77 45.72 180)
+			(uuid "bffe12a5-8bdf-449f-953c-e9c92b9f5bbf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VCC" input
+			(at 64.77 53.34 180)
+			(uuid "a3806b5e-34b2-4fe8-b0cf-1acbfe9dd204")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "mp3_player"
+				(path "/2c361aad-9218-45b1-882d-1b23ed962d51"
+					(page "5")
 				)
 			)
 		)
