@@ -5,7 +5,9 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <SD.h>
+#include <SdFat.h>
 #include <vector>
+#include <Preferences.h>
 
 // SPI VS1053
 #define VS_RST    9       // VS1053 reset pin (output)
@@ -34,9 +36,13 @@ Adafruit_SSD1306 display(128, 32, &Wire, OLED_RESET);
 // VS1053 player object
 Adafruit_VS1053_FilePlayer musicPlayer = Adafruit_VS1053_FilePlayer(VS_RST, VS_CS, VS_DCS, DREQ, CARDCS);
 
+Preferences prefs;
+
 // Dynamic Playlist
 std::vector<String> playlist;
 int currentTrackIndex = 0;
+SdFat SD2;
+SdFile root;
 
 // Debounce state
 uint32_t lastBtnTime = 0;
@@ -45,7 +51,7 @@ uint32_t lastBtnTime = 0;
 bool wasPlaying = false;
 
 // Volume state (0 = loud, 100 = silent)
-uint8_t volumeLevel = 20;
+uint8_t volumeLevel = 50;
 const uint8_t VOLUME_STEP = 1;
 
 void setup() {
@@ -60,7 +66,7 @@ void setup() {
   }
   Serial.println(F("VS1053 found"));
 
-  musicPlayer.sineTest(0x44, 500);    // Make a tone to indicate VS1053 is working
+  //musicPlayer.sineTest(0x44, 500);    // Make a tone to indicate VS1053 is working
  
   if (!SD.begin(CARDCS)) {
     Serial.println(F("SD failed, or not present"));
@@ -77,19 +83,41 @@ void setup() {
     for(;;); // Don't proceed, loop forever
   }
 
-  display.display();
-  delay(2000);
+  //display.display();
+  //delay(2000);
   display.clearDisplay();
   display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
   
-  File root = SD.open("/");
-  while (true) {
-    File f = root.openNextFile();
-    if (!f) break;
-    String fn = f.name();
-    if (!f.isDirectory() && fn.endsWith(".mp3") && !fn.startsWith(".")) {
-      playlist.push_back("/" + fn);
+  // File root = SD.open("/");
+  // while (true) {
+  //   File f = root.openNextFile();
+  //   if (!f) break;
+  //   String fn = f.name();
+  //   if (!f.isDirectory() && fn.endsWith(".mp3") && !fn.startsWith(".")) {
+  //     playlist.push_back("/" + fn);
+  //   }
+  //   f.close();
+  // }
+  SD2.begin(CARDCS);
+  playlist.reserve(128);         // avoid repeated reallocations
+  root.openRoot(&SD2);
+  SdFile f;
+  while (f.openNext(&root, O_READ)) {
+    if (!f.isDir()) {
+      char name[64];
+      f.getName(name, sizeof(name));
+
+      // *** skip macOS resource‐fork files “._…” ***
+      if (name[0] == '.' && name[1] == '_') {
+        f.close();
+        continue;
+      }
+
+      int len = strlen(name);
+      if (len>4 && !strcasecmp(name+len-4, ".mp3")) {
+        playlist.push_back(String("/") + name);
+      }
     }
     f.close();
   }
@@ -108,9 +136,33 @@ void setup() {
   musicPlayer.setVolume(volumeLevel, volumeLevel);
 
   // start first track
-  playTrack(0);
-}
+  //playTrack(0);
+  prefs.begin("player", false); // namespace "player", read/write
+  
+  // read saved state
+  int savedIdx = prefs.getInt("idx", 0);
+  uint32_t savedPos = prefs.getUInt("pos", 0);
 
+  // clamp
+  if (savedIdx >= 0 && savedIdx < playlist.size()) {
+    currentTrackIndex = savedIdx;
+  } else {
+    currentTrackIndex = 0;
+  }
+
+  // start & seek
+  playTrack(currentTrackIndex);
+
+  // if we actually have a saved byte‐position, jump there:
+  if (savedPos > 0) {
+    File &f = musicPlayer.currentTrack;
+    uint32_t fileLen = f.size();
+    if (savedPos < fileLen) {
+      f.seek(savedPos);        // jump to exactly where we left off
+      musicPlayer.feedBuffer(); // refill the VS1053’s buffer
+    }
+  }
+}
 
 void loop() {
   bool isPlaying = musicPlayer.playingMusic;
@@ -165,11 +217,13 @@ void playTrack(int idx) {
   currentTrackIndex = idx;
   musicPlayer.startPlayingFile(playlist[idx].c_str());
   updateDisplay();
+  saveState();
 }
 
 void nextTrack() {
   Serial.println("Next");
   playTrack( (currentTrackIndex + 1) % playlist.size() );
+  saveState();
 }
 
 void prevOrRestart() {
@@ -181,6 +235,7 @@ void prevOrRestart() {
     Serial.println("Previous");
     int prevIdx = (currentTrackIndex - 1 + playlist.size()) % playlist.size();
     playTrack(prevIdx);
+    saveState();
   }
 }
 
@@ -189,6 +244,7 @@ void pauseToggle() {
   musicPlayer.pausePlaying(nowPaused);
   Serial.println(nowPaused ? "Paused" : "Resumed");
   updateDisplay();
+  saveState();
 }
 
 void seekRelative(int sec) {
@@ -200,6 +256,34 @@ void seekRelative(int sec) {
   f.seek(newPos);
   musicPlayer.feedBuffer();
   Serial.printf("Seek %+.ds → byte %ld\n", sec, newPos);
+  saveState();
+}
+
+// String readID3Title(const String &path) {
+//   File f = SD.open(path, FILE_READ);
+//   if (f && f.size() > 128) {
+//     f.seek(f.size() - 128);
+//     char tag[3];
+//     f.read((uint8_t*)tag, 3);
+//     if (!memcmp(tag, "TAG", 3)) {
+//       char title[31] = {0};
+//       f.read((uint8_t*)(title), 30);
+//       f.close();
+//       return String(title);
+//     }
+//   }
+//   if(f) f.close();
+//   // fallback to filename (without path)
+//   int slash = path.lastIndexOf('/');
+//   return path.substring(slash + 1);
+// }
+
+void saveState() {
+  // record track index
+  prefs.putInt("idx", currentTrackIndex);
+  // record byte‐offset
+  File &f = musicPlayer.currentTrack;
+  prefs.putUInt("pos", f.position());
 }
 
 void updateDisplay() {
@@ -207,7 +291,8 @@ void updateDisplay() {
   display.setCursor(0, 0);
 
   // 1) Track name
-  display.println(playlist[currentTrackIndex]);
+  display.println(playlist[currentTrackIndex].substring(1,playlist[currentTrackIndex].length() - 4));
+  //display.println( readID3Title( playlist[currentTrackIndex] ) ); // BLOCKING CALLS SO TOO SLOW, DONT USE
 
   // 2) Elapsed + total time
   File &f = musicPlayer.currentTrack;
