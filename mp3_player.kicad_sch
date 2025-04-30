@@ -450,6 +450,148 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Display_Graphic:SSD1306_OLED_I2C_Module"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2573,6 +2715,66 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 55.88) (xy 43.18 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0028074a-563d-4f96-b517-be2862ed58dc")
+	)
+	(wire
+		(pts
+			(xy 43.18 53.34) (xy 43.18 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "306ccc30-618a-4737-8cf4-9bc0b0e5170e")
+	)
+	(wire
+		(pts
+			(xy 44.45 53.34) (xy 43.18 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "317e2816-fd2b-4df7-9a8c-db8332e5471f")
+	)
+	(wire
+		(pts
+			(xy 77.47 73.66) (xy 77.47 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36e4faca-8256-4af8-8e19-2860c1f67e80")
+	)
+	(wire
+		(pts
+			(xy 43.18 55.88) (xy 43.18 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d2ba1e8-1787-4d3e-a74d-1f6f532fb461")
+	)
+	(wire
+		(pts
+			(xy 71.12 73.66) (xy 77.47 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ef6e096-edac-4275-9c9a-561cb61cda6f")
+	)
+	(wire
+		(pts
 			(xy 80.01 127) (xy 82.55 127)
 		)
 		(stroke
@@ -2605,7 +2807,7 @@
 	)
 	(global_label "3.7V"
 		(shape output)
-		(at 52.07 49.53 0)
+		(at 43.18 49.53 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2615,7 +2817,7 @@
 		)
 		(uuid "08b2c6bf-0a5e-466b-9fc2-6b875dcdf479")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.1676 49.53 0)
+			(at 50.2776 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2933,9 +3135,31 @@
 			)
 		)
 	)
+	(global_label "3.7V"
+		(shape input)
+		(at 60.96 73.66 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "470fe3d4-45f9-43ea-a134-6511405eed0c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 53.8624 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "0V"
 		(shape output)
-		(at 52.07 59.69 0)
+		(at 43.18 59.69 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2945,7 +3169,7 @@
 		)
 		(uuid "504628d4-e6f7-4a82-af9e-6c1a58e89a7a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.3533 59.69 0)
+			(at 48.4633 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3369,28 +3593,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3.7V"
-		(shape input)
-		(at 77.47 76.2 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "93f1e31b-fdc3-4aef-bfae-12bc1035cc0e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 77.47 69.1024 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -4066,7 +4268,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS"
 			(at 43.18 175.26 0)
 			(effects
 				(font
@@ -4103,6 +4305,76 @@
 			(project "mp3_player"
 				(path "/2c361aad-9218-45b1-882d-1b23ed962d51"
 					(reference "SW7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 49.53 55.88 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "46c50d62-4879-4050-8914-5d6eb9e83745")
+		(property "Reference" "J2"
+			(at 52.07 55.8801 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 52.07 53.3401 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal"
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d63258a1-e4a4-4961-9258-55065b1f3fe8")
+		)
+		(pin "1"
+			(uuid "7ed708fb-ec20-478c-87e9-8ff7d33a4ed0")
+		)
+		(instances
+			(project "mp3_player"
+				(path "/2c361aad-9218-45b1-882d-1b23ed962d51"
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -4202,7 +4474,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+		(property "Footprint" "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS"
 			(at 25.4 167.64 0)
 			(effects
 				(font
@@ -4246,7 +4518,7 @@
 	)
 	(symbol
 		(lib_id "Battery_Management:TP4056_LIPO_Battery_Charger_and_Protection_Module")
-		(at 39.37 53.34 0)
+		(at 30.48 53.34 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4255,7 +4527,7 @@
 		(fields_autoplaced yes)
 		(uuid "54e6def1-f281-440e-a890-be2616721685")
 		(property "Reference" "U11"
-			(at 38.735 43.18 0)
+			(at 29.845 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4263,7 +4535,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 38.735 45.72 0)
+			(at 29.845 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4271,7 +4543,7 @@
 			)
 		)
 		(property "Footprint" "Battery:TP4056_LIPO_Charger_Protection_Module"
-			(at 39.37 40.894 0)
+			(at 30.48 40.894 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4280,7 +4552,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 49.53 0)
+			(at 30.48 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4289,7 +4561,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 39.37 49.53 0)
+			(at 30.48 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4477,7 +4749,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_SPST")
-		(at 49.53 129.54 0)
+		(at 66.04 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4486,7 +4758,7 @@
 		(fields_autoplaced yes)
 		(uuid "703fe173-e01c-4f6d-b168-f8b096b4a792")
 		(property "Reference" "SW1"
-			(at 49.53 123.19 0)
+			(at 66.04 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4494,7 +4766,7 @@
 			)
 		)
 		(property "Value" "Power"
-			(at 49.53 125.73 0)
+			(at 66.04 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4502,7 +4774,7 @@
 			)
 		)
 		(property "Footprint" "Button_Switch_THT:SW_DIP_SPSTx01_Slide_6.7x4.1mm_W7.62mm_P2.54mm_LowProfile"
-			(at 49.53 129.54 0)
+			(at 66.04 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4511,7 +4783,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 49.53 129.54 0)
+			(at 66.04 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4520,7 +4792,7 @@
 			)
 		)
 		(property "Description" "Single Pole Single Throw (SPST) switch"
-			(at 49.53 129.54 0)
+			(at 66.04 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
